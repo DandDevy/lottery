@@ -43,10 +43,9 @@ public class Ticket {
     @Column(nullable = false)
     private String series;
 
-    @JsonIgnore
-    @Column(nullable = false)
-    private boolean isStatusChecked;
-
+    /**
+     * The tickets result.
+     */
     @Column(nullable = false)
     private int status;
 

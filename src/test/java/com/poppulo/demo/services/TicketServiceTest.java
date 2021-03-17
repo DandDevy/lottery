@@ -23,8 +23,20 @@ class TicketServiceTest {
     }
 
     @Test
-    void createFail() {
+    void createFailNan() {
         Ticket ticket = service.create("1d1");
+        assertNull(ticket);
+    }
+
+    @Test
+    void createFailTooSmall() {
+        Ticket ticket = service.create("11");
+        assertNull(ticket);
+    }
+
+    @Test
+    void createFailTooBig() {
+        Ticket ticket = service.create("0011");
         assertNull(ticket);
     }
 

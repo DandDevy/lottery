@@ -25,7 +25,6 @@ public class TicketServiceImpl implements TicketService {
         Ticket ticket = new Ticket();
         ticket.setSeries(series);
         ticket.setStatus(-1);
-        ticket.setStatusChecked(false);
         return ticketDao.save(ticket);
     }
 
